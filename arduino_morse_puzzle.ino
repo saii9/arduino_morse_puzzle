@@ -1,8 +1,8 @@
 #include "morse_def_text.hpp"
 
-std::string MESSAGE = "HELLO KEVIN BIT.LY ABCDE AES SAREGAMA";
+std::string MESSAGE = "AAAAA BBBBB CCCCC DDDDD EEEEE FFFFF";
 const int TIME_PERIOD = 100;
-const int SLEEP_BEFORE_START = 5000;
+const int SLEEP_BEFORE_START = 2000;
 int pins[] = {LED_BUILTIN, 12};
 int numPins = 0; 
 int done = 0;
@@ -72,7 +72,7 @@ void loop()
   Serial.write("starting delay\n");
   delay(SLEEP_BEFORE_START);
   Serial.write("starting morse\n");
-  morse_start();  
+  // morse_start();  
   for (char const &c: MESSAGE){
     Serial.write(c);
     Serial.write(" : ");
@@ -80,6 +80,6 @@ void loop()
     morse_write(morseLetterSpace);
     Serial.write("\n");
   }
-  morse_end();
+  // morse_end();
   done++;
 }
